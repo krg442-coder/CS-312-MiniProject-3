@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CS-312 Mini Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    <h1>Hello from my webpage!</h1>
-    <p>My Express server is working.</p>
-</body>
-</html>
+
+<body> 
+    <img src="https://cdn.discordapp.com/attachments/1524659553927430286/1543842130756108388/DrakulWhy.png?ex=6aa97447&is=6aa822c7&hm=03ed7773539f735e3683702e29b596da9666c805e35c8b3a17da493cb4d2eea1&"
+    class="title-image">
+    <h1 class="title">Drakul's Dramblings</h1>
+
+    <button id="createPostButton">Create Post</button>
+
+<main class="page"> 
+<div id="postPopup">
+    <h2>Make Your Post!</h2>
+
+    <form action="/create-post" method="POST">
+        <label for="creator">Name:</label>
+        <input type="text" id="creator" name="creator">
+        <br>
+
+        <label for="postTitle">Post Title:</label>
+
+        <input type="text" id="postTitle" name="postTitle">
+        <br>
+
+        <label for="blog">Description:</label>
+        <br>
+
+        <textarea id="blog" name="blog" rows="10"></textarea>
+        <br>
+        <button type="submit">Create Post</button>
+    </form>
+</div>
+
+ <div id="posts">
+    <% posts.forEach(post => { %>
+        <article class="post">
+            <h2><%= post.title %></h2>
+            <p><%= post.time %></p>
+            <p>By <%= post.creator %></p>
+            <p><%= post.blog %></p>
+            <!-- POST EDITING-->
+            <a href="/edit-post/<%= post.id %>">
+                <button type="button">Edit</button>
+            </a>
+            <!-- POST DELETION-->
+            <form action="/delete-post/<%= post.id %>" method="POST">
+            <button type="submit">Delete</button>
+            </form>
+        </article>
+    <% }); %>
+    
+</div>
+</main>
+<script src="/script.js"></script>
+</body></html>

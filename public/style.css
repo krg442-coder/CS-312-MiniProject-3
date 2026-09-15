@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap');
+    
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f1e3;
+    min-height: 100vh;
+    padding: 100px 40px 20px;
+}
+    
+.page {
+    background-color: white;
+    min-height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 60px 20px 10px;
+    }
+
+    .page {
+        min-height: calc(100vh - 50px);
+    }
+}
+
+.title {
+    font-family: 'Unbounded' , sans-serif;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.title-image {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-position: center;
+}
+
+#postPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#posts {
+    padding-top: 20px;
+}
+
+.post {
+    background-color: #f0f0f0;
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+}

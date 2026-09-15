@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>Edit Blog Post</h1>
+
+        <form action="/edit-post/<%= post.id %>" method="POST">
+
+            <label for="creator">Name:</label>
+            <input type="text" id="creator" name="creator" value="<%= post.creator %>">
+
+            <label for="postTitle">Title:</label>
+            <input type="text" id="postTitle" name="postTitle" value="<%= post.title %>">
+
+            <label for="blog">Description:</label>
+            <textarea id="blog" name="blog"><%= post.blog %></textarea>
+
+            <button type="submit">Save Changes</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
