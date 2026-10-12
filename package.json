@@ -1,23 +1,12 @@
 {
-  "name": "cs-312-miniproject-1",
+  "name": "cs-312-miniproject-3",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000C\u0000S\u0000-\u00003\u00001\u00002\u0000-\u0000M\u0000i\u0000n\u0000i\u0000P\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000-\u00001\u0000\r\u0000 \u0000",
-  "main": "index.js",
+  "description": "Drakul's Dramblings Blog Web Application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/krg442-coder/CS-312-MiniProject-1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/krg442-coder/CS-312-MiniProject-1/issues"
-  },
-  "homepage": "https://github.com/krg442-coder/CS-312-MiniProject-1#readme",
   "dependencies": {
     "ejs": "^6.0.1",
     "express": "^5.2.1"

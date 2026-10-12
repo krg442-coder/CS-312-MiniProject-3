@@ -72,3 +72,18 @@ body {
     padding: 25px;
     border-radius: 10px;
 }
+
+.account-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.account-buttons p {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}

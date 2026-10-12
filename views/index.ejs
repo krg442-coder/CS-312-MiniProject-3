@@ -8,21 +8,36 @@
 </head>
 
 <body> 
-    <img src="https://cdn.discordapp.com/attachments/1524659553927430286/1543842130756108388/DrakulWhy.png?ex=6aa97447&is=6aa822c7&hm=03ed7773539f735e3683702e29b596da9666c805e35c8b3a17da493cb4d2eea1&"
-    class="title-image">
+    <img src="/DrakulWhy.png" class="title-image" alt="Drakul">
     <h1 class="title">Drakul's Dramblings</h1>
 
-    <button id="createPostButton">Create Post</button>
+<div class="account-buttons">
+    <% if (userId) { %>
+        <p>Welcome, <%= userName %>!</p>
+
+        <button id="createPostButton">Create Post</button>
+
+        <form action="/signout" method="POST">
+            <button type="submit">Sign Out</button>
+        </form>
+    <% } else { %>
+        <a href="/signin">
+            <button type="button">Sign In</button>
+        </a>
+
+        <a href="/signup">
+            <button type="button">Sign Up</button>
+        </a>
+    <% } %>
+</div>
 
 <main class="page"> 
+<% if (userId) { %>
 <div id="postPopup">
+    
     <h2>Make Your Post!</h2>
 
     <form action="/create-post" method="POST">
-        <label for="creator">Name:</label>
-        <input type="text" id="creator" name="creator">
-        <br>
-
         <label for="postTitle">Post Title:</label>
 
         <input type="text" id="postTitle" name="postTitle">
@@ -36,7 +51,7 @@
         <button type="submit">Create Post</button>
     </form>
 </div>
-
+<% } %>
  <div id="posts">
     <% posts.forEach(post => { %>
         <article class="post">
@@ -44,16 +59,21 @@
             <p><%= post.time %></p>
             <p>By <%= post.creator %></p>
             <p><%= post.blog %></p>
-            <!-- POST EDITING-->
-            <a href="/edit-post/<%= post.id %>">
-                <button type="button">Edit</button>
-            </a>
-            <!-- POST DELETION-->
-            <form action="/delete-post/<%= post.id %>" method="POST">
-            <button type="submit">Delete</button>
-            </form>
+
+            <% if (userId && userId === post.creatorUserId) { %>
+                <!-- POST EDITING -->
+                <a href="/edit-post/<%= post.id %>">
+                    <button type="button">Edit</button>
+                </a>
+
+                <!-- POST DELETION -->
+                <form action="/delete-post/<%= post.id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            <% } %>
         </article>
     <% }); %>
+</div>
     
 </div>
 </main>
