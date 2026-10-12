@@ -145,8 +145,6 @@ app.post("/create-post", async (req, res) => {
     }
 });
 
-// Get info on exact edit ID (Using date)
-
 // Get a post for editing
 app.get("/edit-post/:id", async (req, res) => {
     if (!req.session.userId) {
